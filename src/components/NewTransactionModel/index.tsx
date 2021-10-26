@@ -5,6 +5,7 @@ import { Container, TransactionTypeContainer, RadioBox } from "./styles";
 import incomeImg from "../../assets/Entradas.svg"
 import outcomeImg from "../../assets/Saidas.svg"
 import { FormEvent, useState } from "react";
+import { api } from "../../services/api";
 
 interface NewTransactionModelProps {
     openModal: boolean,
@@ -22,12 +23,14 @@ export function NewTransactionModel({openModal,closeModal} : NewTransactionModel
     function handleCreateNewTransaction(event: FormEvent) {
         event.preventDefault()
 
-        console.log(
-            type,
+        const data = {
             title,
             value,
+            type,
             category,
-        )
+        };
+
+        api.post('/transactions', data)
     };
 
     return(
