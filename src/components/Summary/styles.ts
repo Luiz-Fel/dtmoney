@@ -28,8 +28,17 @@ export const Container = styled.div`
         }
 
         &.highlight-background {
-            background: var(--green);
             color: #FFF;
+            transition: 0.3s;
+        }
+
+        &.positive {
+            background: var(--green);
+        }
+
+        &.negative {
+            background: var(--red);
+
         }
     }
 
