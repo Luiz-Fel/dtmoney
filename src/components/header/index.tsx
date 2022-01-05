@@ -1,4 +1,3 @@
-import { GlobalStyle } from "../../styles/global";
 import  logoImg from "../../assets/Logo.svg";
 import { Container, Content } from "./styles";
 
