@@ -1,4 +1,3 @@
-import { GlobalStyle } from "../../styles/global";
 import  logoImg from "../../assets/Logo.svg";
 import { Container, Content } from "./styles";
 
@@ -7,7 +6,7 @@ interface PropsTransactionModal {
 }
 
 
-export function Header({openModalFunction} :PropsTransactionModal) {
+export  function Header({openModalFunction} :PropsTransactionModal) {
     return (
     <Container>
         <Content>
