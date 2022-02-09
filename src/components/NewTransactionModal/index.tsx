@@ -16,7 +16,7 @@ interface NewTransactionModelProps {
     closeModal: () => void,
 }
 
-export function NewTransactionModel({openModal,closeModal} : NewTransactionModelProps) {
+export function NewTransactionModal({openModal,closeModal} : NewTransactionModelProps) {
     
     const { createTransaction } = useTransactions()
 
