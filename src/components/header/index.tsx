@@ -6,7 +6,7 @@ interface PropsTransactionModal {
 }
 
 
-export  function Header({openModalFunction} :PropsTransactionModal) {
+export default function Header({openModalFunction} :PropsTransactionModal) {
     return (
     <Container>
         <Content>
