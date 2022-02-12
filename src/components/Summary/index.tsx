@@ -4,9 +4,26 @@ import outcomeImg from "../../assets/Saidas.svg";
 import $Img from "../../assets/Total.svg" 
 import { useTransactions } from "../../hooks/UseTransactions";
 
-export function Summary() {
+interface TransactionProps {
+        
+    transactions: {
+        id: number;
+        title: string;
+        type: string;
+        category: string;
+        amount: number;
+        createdAt: string;
+    }[]
+}
 
-    const { transactions } = useTransactions();
+export function Summary(props : TransactionProps) {
+
+    const { transactions, setTransactions } = useTransactions();
+    
+    if (transactions.length === 0) {
+        setTransactions(props.transactions)
+    }
+ 
     const summary = transactions.reduce((acc , transaction) => {
         if (transaction.type === "deposit") {
          acc.deposits += transaction.amount;

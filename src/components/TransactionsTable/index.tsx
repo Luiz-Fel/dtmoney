@@ -1,13 +1,27 @@
 import { useTransactions } from "../../hooks/UseTransactions";
 import { Container } from "./styles";
 
+interface TransactionProps {
+        
+    transactions: {
+        id: number;
+        title: string;
+        type: string;
+        category: string;
+        amount: number;
+        createdAt: string;
+    }[]
+}
 
 
 
-
-export function TransactionTable() {
+export function TransactionTable(props : TransactionProps) {
   
-    const {transactions} = useTransactions()
+    const {transactions, setTransactions} = useTransactions()
+
+    if (transactions.length === 0) {
+        setTransactions(props.transactions)
+    }
 
     return (
         <Container>

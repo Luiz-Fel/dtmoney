@@ -49,11 +49,19 @@ export function NewTransactionModal({openModal,closeModal} : NewTransactionModel
     onRequestClose={closeModal}
     overlayClassName="overlay-react-modal"
     className="react-modal">
-        <button type="button" onClick={closeModal} className="react-modal-close">
+        <button type="button" onClick={() => {
+            setType("deposit");
+            setAmount(0);
+            setCategory("");
+            setTitle("");
+            closeModal()
+            }} className="react-modal-close">
             <img src={closeImg} alt="Fechar modal" />
         </button>
 
-        <Container onSubmit={handleCreateNewTransaction}>
+        <Container onSubmit={(event) => {
+            setAmount(Number(amount))
+            handleCreateNewTransaction(event)}}>
 
             <h2>Cadastrar transação</h2>
 
@@ -63,10 +71,11 @@ export function NewTransactionModal({openModal,closeModal} : NewTransactionModel
             onChange={event => setTitle(event.target.value)}
             />
 
-            <input type="number" 
+            <input type="text"
+            pattern="[0-9]*" 
             placeholder="Valor"
             value={amount}
-            onChange={event => setAmount(Number(event.target.value))}/>
+            onChange={(event) => {setAmount(Number(event.target.value))}}/>
 
             <TransactionTypeContainer>
                 <RadioBox

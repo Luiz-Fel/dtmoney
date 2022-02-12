@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
 
 interface Transaction {
@@ -19,6 +19,7 @@ interface TransactionsProviderProps {
 interface TransactionsContextData {
     transactions: Transaction[],
     createTransaction: (transaction : TransactionInput) => Promise<void>,
+    setTransactions: Dispatch<SetStateAction<Transaction[]>>,
 }
 
 const TransactionsContext = createContext<TransactionsContextData>(
@@ -51,7 +52,7 @@ export function TransactionProvider({children} : TransactionsProviderProps) {
         }
 
     return (
-        <TransactionsContext.Provider value={{transactions, createTransaction}}>
+        <TransactionsContext.Provider value={{transactions, createTransaction, setTransactions}}>
             {children}
         </TransactionsContext.Provider>
     )

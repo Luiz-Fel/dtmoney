@@ -18,6 +18,14 @@ export const Container = styled.form`
         font-family: var(--font-text);
         background: #E7E9EE;
         border: 1px solid #D7D7D7;
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
 
         font-weight: 400;
         font-size: 1rem;
