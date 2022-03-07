@@ -37,4 +37,12 @@ export const Container = styled.div`
     }
 
 
-`;
+`
+export const EmptyContainer = styled.div`
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+`

@@ -16,14 +16,10 @@ interface TransactionProps {
     }[]
 }
 
-export function Summary(props : TransactionProps) {
+export function Summary() {
 
     const { transactions, setTransactions } = useTransactions();
     
-    if (transactions.length === 0) {
-        setTransactions(props.transactions)
-    }
- 
     const summary = transactions.reduce((acc , transaction) => {
         if (transaction.type === "deposit") {
          acc.deposits += transaction.amount;

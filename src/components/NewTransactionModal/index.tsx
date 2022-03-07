@@ -8,7 +8,7 @@ import closeImg from "../../assets/CloseImg.svg"
 import incomeImg from "../../assets/Entradas.svg"
 import outcomeImg from "../../assets/Saidas.svg"
 
-import { Container, TransactionTypeContainer, RadioBox } from "./styles";
+import { Container, TransactionTypeContainer, RadioBox, MoneySign } from "./styles";
 
 
 interface NewTransactionModelProps {
@@ -70,12 +70,15 @@ export function NewTransactionModal({openModal,closeModal} : NewTransactionModel
             value={title} 
             onChange={event => setTitle(event.target.value)}
             />
-
+            <MoneySign>R$</MoneySign>
             <input type="text"
             pattern="[0-9]*" 
             placeholder="Valor"
             value={amount}
-            onChange={(event) => {setAmount(Number(event.target.value))}}/>
+            onChange={(event) => {setAmount(Number(event.target.value))}}
+            style={{
+                paddingLeft: '2rem',
+            }}/>
 
             <TransactionTypeContainer>
                 <RadioBox

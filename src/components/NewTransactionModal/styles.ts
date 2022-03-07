@@ -29,7 +29,6 @@ export const Container = styled.form`
 
         font-weight: 400;
         font-size: 1rem;
-
         & + input {
             margin-top: 1rem;
         }
@@ -58,6 +57,15 @@ export const Container = styled.form`
 }
 `
 
+export const MoneySign = styled.span`
+
+    position: relative;
+    top: 2.8rem;
+    left: 0.5rem;
+
+`
+
+
 export const TransactionTypeContainer = styled.div`
     margin: 1rem 0;
     display: grid;
@@ -66,6 +74,8 @@ export const TransactionTypeContainer = styled.div`
 
  
 `
+
+
 
 const colors = {
     green: "#33CC95",

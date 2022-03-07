@@ -1,5 +1,5 @@
 import { useTransactions } from "../../hooks/UseTransactions";
-import { Container } from "./styles";
+import { Container, EmptyContainer } from "./styles";
 
 interface TransactionProps {
         
@@ -15,13 +15,11 @@ interface TransactionProps {
 
 
 
-export function TransactionTable(props : TransactionProps) {
+export function TransactionTable() {
   
     const {transactions, setTransactions} = useTransactions()
 
-    if (transactions.length === 0) {
-        setTransactions(props.transactions)
-    }
+
 
     return (
         <Container>
@@ -51,6 +49,12 @@ export function TransactionTable(props : TransactionProps) {
                         </tr> ) )}
                 </tbody>
             </table>
+             {transactions.length === 0 && (
+             <EmptyContainer>
+                        <h2>Sem transações...</h2>
+                       <p>Tente adicionar uma nova transação clicando em "Nova transação".</p>
+            </EmptyContainer>
+            )}
         </Container>
     );
 }
