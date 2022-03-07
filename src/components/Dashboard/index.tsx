@@ -18,7 +18,6 @@ const transactions = [{
     createdAt: String(new Date('2021-02-12 13:00:00'))
   }] 
 
-  localStorage.setItem('transactions', JSON.stringify(transactions))
 export function Dashboard() {
     return (
         <Container>
