@@ -15,7 +15,7 @@ const transactions = [{
     type: 'deposit',
     category: 'Pagamentos',
     amount: 2200,
-    createdAt: String(new Date('2021-02-12 09:00:00 13:00:00'))
+    createdAt: String(new Date('2021-02-12 13:00:00'))
   }] 
 
   localStorage.setItem('transactions', JSON.stringify(transactions))
